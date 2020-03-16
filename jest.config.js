@@ -2,11 +2,27 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
+  // Configuration to use jest-html-reporters
+  reporters: [
+    "default",
+    [
+      "jest-html-reporters",
+      {
+        expand: true,
+        filename: "reports.html",
+        publicPath: "./src/app/html-reports",
+        pageTitle: "Resultados do último teste"
+      }
+    ]
+  ],
+
+  testTimeout: 500,
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
   // Stop running tests after `n` failures
-  bail: true,
+  bail: 0,
 
   // Respect "browser" field in package.json when resolving modules
   // browser: false,
